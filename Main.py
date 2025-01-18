@@ -107,7 +107,6 @@ if __name__ == '__main__':
         token=' '      # Replace with your real token
     )
 
-    #    (Here, we have four sequences and their corresponding IDs.)
     protein_list = [
         ("GSLTTPPLL", "6ugp"),
         ("DGKMKGLAF", "1qin"),
