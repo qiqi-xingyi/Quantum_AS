@@ -51,7 +51,7 @@ def predict_protein_structure(
 
     hamiltonian = protein_folding_problem.qubit_op()
 
-    qubits_num = hamiltonian.num_qubits + 2
+    qubits_num = hamiltonian.num_qubits + 5
     print(f"Number of qubits: {qubits_num}")
 
     vqe_instance = VQE5(
@@ -110,7 +110,6 @@ if __name__ == '__main__':
     protein_list = [
         ("GSLTTPPLL", "6ugp"),
         ("DGKMKGLAF", "1qin"),
-        ("ARVYSNS",   "4f5y"),
         ("IHGIGGFI",  "1a9m"),
         ("NNLGTIAKSGT", "3b26"),
         ("GAVEDGATMTFF", "2xxx")

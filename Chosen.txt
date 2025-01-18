@@ -1,0 +1,19 @@
+1a9m	1a9m_pocket.pdb	Chain A	Residues 47-54	ILE-HIS-GLY-ILE-GLY-GLY-PHE-ILE *
+HIV-1 protease G48H
+https://www.rcsb.org/structure/1A9M
+
+6ugp	6ugp_pocket.pdb	Chain A	Residues 192-200	GLY-SER-LEU-THR-THR-PRO-PRO-LEU-LEU *
+Human Carbonic Anhydrase 2
+https://www.rcsb.org/structure/6UGP
+
+1qin	1qin_pocket.pdb	Chain B	Residues 154-162	ASP-GLY-LYS-MET-LYS-GLY-LEU-ALA-PHE *
+lactoylglutathione lyase
+https://www.rcsb.org/structure/1QIN
+
+3b26	3b26_pocket.pdb	Chain A	Residues 98-108	ASN-ASN-LEU-GLY-THR-ILE-ALA-LYS-SER-GLY-THR *
+Heat shock protein HSP 90-alpha
+https://www.rcsb.org/structure/3B26
+
+2xxx	2xxx_pocket.pdb	Chain A	Residues 136-147	GLY-ALA-VAL-GLU-ASP-GLY-ALA-THR-MET-THR-PHE-PHE *
+GLUTAMATE RECEPTOR, IONOTROPIC KAINATE 2
+https://www.rcsb.org/structure/2XXX
