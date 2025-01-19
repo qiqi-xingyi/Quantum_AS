@@ -39,14 +39,14 @@ def rename_and_move_file(current_path, new_name, target_directory):
     shutil.move(new_path, target_path)
     print(f"File moved to {target_path}")
 
-def create_docking_file(Q_res_path, AF2_res_path, id):
+def create_docking_file(Q_res_path, AF3_res_path, id):
 
     preparer = DockingFilePreparer(Q_res_path)
     q_translated_pdb = f"./process_data/best_group/{id}/full_model_trans.pdb"
     preparer.prepare_pdbqt(translate=True, output_translated_file=q_translated_pdb)
 
-    preparer = DockingFilePreparer(AF2_res_path)
-    af_translated_pdb = f"process_data/best_group/{id}/alphafold_predicted/fold_model_trans.pdb"
+    preparer = DockingFilePreparer(AF3_res_path)
+    af_translated_pdb = f"process_data/best_group/{id}/fold_{id}/fold_model_trans.pdb"
     preparer.prepare_pdbqt(translate=True, output_translated_file=af_translated_pdb)
     preparer.prepare_pdbqt()
 

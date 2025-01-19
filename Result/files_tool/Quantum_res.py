@@ -28,7 +28,7 @@ class QuantumResult:
         self.alignment_filename = os.path.join(self.base_dir, 'protein.ali')
         self.full_model_filename = os.path.join(self.base_dir, 'full_model.pdb')
 
-        self.chain_id = self.xyz_file[-5]
+        self.chain_id = "A"
 
 
     def read_xyz(self):
