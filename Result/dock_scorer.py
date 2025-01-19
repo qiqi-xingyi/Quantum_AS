@@ -54,7 +54,7 @@ def docking_test(protein_id):
 
         # AF3 docking
         docking = AutoDockDocking(
-            f"./process_data/best_group/{protein_id}/fold_{protein_id}/fold_model_3.pdbqt",
+            f"./process_data/best_group/{protein_id}/fold_{protein_id}/fold_{protein_id}_model_4.pdbqt",
             f"./process_data/best_group/{protein_id}/PDBbind_data/{protein_id}/{protein_id}_ligand_trans.mol2",
             af3_output_dir,
             f"af3_docking_log_trial_{trial}.txt",

@@ -28,7 +28,7 @@ class AutoDockDocking:
         center_x, center_y, center_z = self.calculate_center_of_mass(self.ligand_mol2)
 
         # Step 3: Run AutoDock Vina docking with calculated box center
-        output_file = os.path.join(self.output_dir, "docking_output_6mu3.pdbqt")
+        output_file = os.path.join(self.output_dir, "docking_output.pdbqt")
         log_file = os.path.join(self.output_dir, self.log_file_name)
 
         print("Running AutoDock Vina docking...")
