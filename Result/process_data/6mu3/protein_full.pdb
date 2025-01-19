@@ -1,0 +1,51 @@
+EXPDTA    THEORETICAL MODEL, MODELLER 10.6 2025/01/13 11:44:05
+REMARK   6 MODELLER OBJECTIVE FUNCTION:        17.4169
+REMARK   6 MODELLER BEST TEMPLATE % SEQ ID: 100.000
+REMARK   6 SEQUENCE: protein_full
+REMARK   6 ALIGNMENT: /Users/yuqizhang/Desktop/Code/WorkSpace/Quantum_Activate_Site/Quantum_Activate_Site/Post_Processing/process_data/6mu3_L/protein.ali
+REMARK   6 SCRIPT: /Users/yuqizhang/Desktop/Code/WorkSpace/Quantum_Activate_Site/Quantum_Activate_Site/Post_Processing/create_full_protein.py
+REMARK   6 DOPE score: -130.92007
+REMARK   6 GA341 score: 0.97100
+REMARK   6 TEMPLATE: ca_model 1:L - 5:L MODELS 1:A - 5:A AT 100.0%
+ATOM      1  N   TYR A   1      11.045  14.991  -2.444  1.00162.17           N
+ATOM      2  CA  TYR A   1      12.287  14.209  -2.259  1.00162.17           C
+ATOM      3  CB  TYR A   1      13.389  15.081  -1.612  1.00162.17           C
+ATOM      4  CG  TYR A   1      12.840  15.881  -0.480  1.00162.17           C
+ATOM      5  CD1 TYR A   1      12.825  15.394   0.804  1.00162.17           C
+ATOM      6  CD2 TYR A   1      12.351  17.145  -0.718  1.00162.17           C
+ATOM      7  CE1 TYR A   1      12.317  16.157   1.831  1.00162.17           C
+ATOM      8  CE2 TYR A   1      11.843  17.914   0.301  1.00162.17           C
+ATOM      9  CZ  TYR A   1      11.828  17.420   1.585  1.00162.17           C
+ATOM     10  OH  TYR A   1      11.308  18.196   2.644  1.00162.17           O
+ATOM     11  C   TYR A   1      12.130  12.893  -1.569  1.00162.17           C
+ATOM     12  O   TYR A   1      11.401  12.023  -2.043  1.00162.17           O
+ATOM     13  N   ALA A   2      12.809  12.708  -0.422  1.00201.84           N
+ATOM     14  CA  ALA A   2      12.792  11.430   0.229  1.00201.84           C
+ATOM     15  CB  ALA A   2      13.678  11.368   1.484  1.00201.84           C
+ATOM     16  C   ALA A   2      11.395  11.089   0.633  1.00201.84           C
+ATOM     17  O   ALA A   2      10.625  11.946   1.063  1.00201.84           O
+ATOM     18  N   GLY A   3      11.033   9.803   0.463  1.00 90.53           N
+ATOM     19  CA  GLY A   3       9.737   9.281   0.793  1.00 90.53           C
+ATOM     20  C   GLY A   3       9.524   9.309   2.269  1.00 90.53           C
+ATOM     21  O   GLY A   3       8.420   9.587   2.735  1.00 90.53           O
+ATOM     22  N   TYR A   4      10.580   9.019   3.044  1.00215.01           N
+ATOM     23  CA  TYR A   4      10.468   8.939   4.467  1.00215.01           C
+ATOM     24  CB  TYR A   4      11.836   8.565   5.079  1.00215.01           C
+ATOM     25  CG  TYR A   4      11.814   8.501   6.566  1.00215.01           C
+ATOM     26  CD1 TYR A   4      10.921   7.701   7.240  1.00215.01           C
+ATOM     27  CD2 TYR A   4      12.759   9.194   7.281  1.00215.01           C
+ATOM     28  CE1 TYR A   4      10.935   7.641   8.616  1.00215.01           C
+ATOM     29  CE2 TYR A   4      12.779   9.137   8.652  1.00215.01           C
+ATOM     30  CZ  TYR A   4      11.861   8.366   9.326  1.00215.01           C
+ATOM     31  OH  TYR A   4      11.895   8.316  10.736  1.00215.01           O
+ATOM     32  C   TYR A   4       9.991  10.263   4.971  1.00215.01           C
+ATOM     33  O   TYR A   4       9.054  10.334   5.765  1.00215.01           O
+ATOM     34  N   SER A   5      10.599  11.356   4.484  1.00 25.02           N
+ATOM     35  CA  SER A   5      10.170  12.640   4.941  1.00 25.02           C
+ATOM     36  CB  SER A   5      10.919  13.806   4.275  1.00 25.02           C
+ATOM     37  OG  SER A   5      10.557  13.900   2.907  1.00 25.02           O
+ATOM     38  C   SER A   5       8.684  12.793   4.616  1.00 25.02           C
+ATOM     39  O   SER A   5       8.219  12.166   3.625  1.00 25.02           O
+ATOM     40  OXT SER A   5       7.999  13.546   5.353  1.00 25.02           O
+TER      41      SER A   5
+END

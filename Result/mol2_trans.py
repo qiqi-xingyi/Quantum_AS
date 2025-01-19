@@ -7,12 +7,12 @@
 from files_tool import Mol2Translator
 
 if __name__ == '__main__':
-    chain_id = '4zb8'
-    protein_id = '4zb8'
+
+    protein_id = '1a9m'
 
     # Initialize the translator with input and output file paths
-    translator = Mol2Translator(f"./process_data/{chain_id}/PDBbind_data/{protein_id}/{protein_id}_ligand.mol2",
-                                f"./process_data/{chain_id}/PDBbind_data/{protein_id}/{protein_id}_ligand_trans.mol2")
+    translator = Mol2Translator(f"./process_data/best_group/{protein_id}/PDBbind_data/{protein_id}/{protein_id}_ligand.mol2",
+                                f"./process_data/best_group/{protein_id}/PDBbind_data/{protein_id}/{protein_id}_ligand_trans.mol2")
 
     # Perform the translation
     translator.prepare_translated_mol2()

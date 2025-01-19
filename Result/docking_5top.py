@@ -2,7 +2,7 @@
 # @Time : 1/14/25 8:36 AM
 # @Author : Yuqi Zhang
 # @Email : yzhan135@kent.edu
-# @File : docking_others.py
+# @File : docking_5top.py
 
 import random
 from Autodock_tool import AutoDockDocking
