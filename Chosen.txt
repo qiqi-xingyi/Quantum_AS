@@ -4,7 +4,7 @@ https://www.rcsb.org/structure/1A9M
 
 6ugp	6ugp_pocket.pdb	Chain A	Residues 192-200	GLY-SER-LEU-THR-THR-PRO-PRO-LEU-LEU *
 Human Carbonic Anhydrase 2
-https://www.rcsb.org/structure/6UGP
+https://www.rcsb.org/structure/6UGPw p
 
 1qin	1qin_pocket.pdb	Chain B	Residues 154-162	ASP-GLY-LYS-MET-LYS-GLY-LEU-ALA-PHE *
 lactoylglutathione lyase
@@ -17,3 +17,7 @@ https://www.rcsb.org/structure/3B26
 2xxx	2xxx_pocket.pdb	Chain A	Residues 136-147	GLY-ALA-VAL-GLU-ASP-GLY-ALA-THR-MET-THR-PHE-PHE *
 GLUTAMATE RECEPTOR, IONOTROPIC KAINATE 2
 https://www.rcsb.org/structure/2XXX
+
+6mu3 6mu3_pocket.pdb Chain A Residues  91-95   TYR-ALA-GLY-TYR-SER *
+Human antibody fab 2G12
+https://www.rcsb.org/structure/6MU3

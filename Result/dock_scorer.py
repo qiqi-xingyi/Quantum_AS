@@ -64,10 +64,10 @@ def docking_test(protein_id):
         print(f"AF3 Trial {trial} docking completed.")
         print("\n")
 
-
 if __name__ == "__main__":
 
-    protein_ids = ['1a9m','1qin','2xxx','3b26','6ugp']
+    # protein_ids = ['1a9m','1qin','2xxx','3b26','6ugp']
+    protein_ids = ['1a9m']
 
     for obj in protein_ids:
         docking_test(obj)
