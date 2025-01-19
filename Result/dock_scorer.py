@@ -8,14 +8,13 @@ import random
 from Autodock_tool import AutoDockDocking
 import os
 
-if __name__ == "__main__":
+def docking_test(protein_id):
+
+    print(f'Protein ID:{protein_id}')
 
     num_trials = 20
-    docking_output_path = 'docking_output_4zb8'
+    docking_output_path = f'docking_output/docking_output_{protein_id}'
     seed_log_file = f"./process_data/{docking_output_path}/seed_log.txt"
-
-    chain_id = '4zb8'
-    protein_id = '4zb8'
 
     os.makedirs(os.path.dirname(seed_log_file), exist_ok=True)
 
@@ -39,8 +38,8 @@ if __name__ == "__main__":
 
         # Quantum docking
         docking = AutoDockDocking(
-            f"./process_data/{chain_id}/full_model.pdbqt",
-            f"./process_data/{chain_id}/PDBbind_data/{protein_id}/{protein_id}_ligand_trans.mol2",
+            f"./process_data/best_group/{protein_id}/full_model.pdbqt",
+            f"./process_data/best_group/{protein_id}/PDBbind_data/{protein_id}/{protein_id}_ligand_trans.mol2",
             quantum_output_dir,
             f"docking_log_trial_{trial}.txt",
             seed
@@ -49,21 +48,31 @@ if __name__ == "__main__":
         print(f"Quantum Trial {trial} docking completed.")
         print("\n")
 
+        print(f'AF3 Trial {trial}:')
+        af3_output_dir = f"./process_data/{docking_output_path}/af3_trial_{trial}"
+        os.makedirs(af3_output_dir, exist_ok=True)
 
-        print(f'AF2 Trial {trial}:')
-        af2_output_dir = f"./process_data/{docking_output_path}/af2_trial_{trial}"
-        os.makedirs(af2_output_dir, exist_ok=True)
-
-        # AF2 docking
+        # AF3 docking
         docking = AutoDockDocking(
-            f"./process_data/{chain_id}/alphafold_predicted/fold_model_3.pdbqt",
-            f"./process_data/{chain_id}/PDBbind_data/{protein_id}/{protein_id}_ligand_trans.mol2",
-            af2_output_dir,
-            f"af2_docking_log_trial_{trial}.txt",
+            f"./process_data/best_group/{protein_id}/fold_{protein_id}/fold_model_3.pdbqt",
+            f"./process_data/best_group/{protein_id}/PDBbind_data/{protein_id}/{protein_id}_ligand_trans.mol2",
+            af3_output_dir,
+            f"af3_docking_log_trial_{trial}.txt",
             seed
         )
         docking.run_docking()
-        print(f"AF2 Trial {trial} docking completed.")
+        print(f"AF3 Trial {trial} docking completed.")
         print("\n")
+
+
+
+if __name__ == "__main__":
+
+    protein_ids = ['1a9m','1qin','2xxx','3b26','6ugp']
+
+    for obj in protein_ids:
+        docking_test(obj)
+
+
 
 
