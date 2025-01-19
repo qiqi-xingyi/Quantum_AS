@@ -65,7 +65,6 @@ def docking_test(protein_id):
         print("\n")
 
 
-
 if __name__ == "__main__":
 
     protein_ids = ['1a9m','1qin','2xxx','3b26','6ugp']
