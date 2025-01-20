@@ -63,7 +63,7 @@ class VinaDockingResultParser:
 
 def process_all_results(base_dir, output_summary_file):
     quantum_results = []
-    af2_results = []
+    af3_results = []
 
     # Ensure the output directory exists
     output_dir = os.path.dirname(output_summary_file)
@@ -82,7 +82,7 @@ def process_all_results(base_dir, output_summary_file):
                     if "quantum" in log_file:
                         quantum_results.append((avg_affinity, avg_rmsd_lb, avg_rmsd_ub))
                     elif "af3" in log_file:
-                        af2_results.append((avg_affinity, avg_rmsd_lb, avg_rmsd_ub))
+                        af3_results.append((avg_affinity, avg_rmsd_lb, avg_rmsd_ub))
                 except Exception as e:
                     print(f"Error processing file {log_file}: {e}")
 
@@ -96,7 +96,7 @@ def process_all_results(base_dir, output_summary_file):
         return avg_affinity, avg_rmsd_lb, avg_rmsd_ub
 
     quantum_overall_avg = calculate_overall_average(quantum_results)
-    af2_overall_avg = calculate_overall_average(af2_results)
+    af2_overall_avg = calculate_overall_average(af3_results)
 
     # Save results to summary file
     with open(output_summary_file, "w") as summary_file:
@@ -106,7 +106,7 @@ def process_all_results(base_dir, output_summary_file):
         summary_file.write(f"Overall Average: Affinity = {quantum_overall_avg[0]:.4f}, RMSD Lower Bound = {quantum_overall_avg[1]:.4f}, RMSD Upper Bound = {quantum_overall_avg[2]:.4f}\n\n")
 
         summary_file.write("AF3 Results:\n")
-        for i, (affinity, rmsd_lb, rmsd_ub) in enumerate(af2_results, 1):
+        for i, (affinity, rmsd_lb, rmsd_ub) in enumerate(af3_results, 1):
             summary_file.write(f"Trial {i}: Affinity = {affinity:.4f}, RMSD Lower Bound = {rmsd_lb:.4f}, RMSD Upper Bound = {rmsd_ub:.4f}\n")
         summary_file.write(f"Overall Average: Affinity = {af2_overall_avg[0]:.4f}, RMSD Lower Bound = {af2_overall_avg[1]:.4f}, RMSD Upper Bound = {af2_overall_avg[2]:.4f}\n\n")
 
@@ -114,7 +114,7 @@ def process_all_results(base_dir, output_summary_file):
 
 
 if __name__ == "__main__":
-    docking_output_path = "docking_output/docking_output_6ugp"
+    docking_output_path = "docking_output/docking_output_1a9m"
 
     base_dir = f"./process_data/{docking_output_path}"
     output_summary_file = f"./process_data/{docking_output_path}/summary_results.txt"
