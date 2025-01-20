@@ -89,7 +89,6 @@ def process_all_proteins(root_dir="process_data/best_group"):
             except Exception as e:
                 print(f"[ERROR] Failed to process {protein_id}: {e}")
 
-
 if __name__ == '__main__':
 
     process_all_proteins("process_data/best_group")

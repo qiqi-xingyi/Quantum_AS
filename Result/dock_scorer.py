@@ -67,11 +67,7 @@ def docking_test(protein_id):
 if __name__ == "__main__":
 
     # protein_ids = ['1a9m','1qin','2xxx','3b26','6ugp']
-    protein_ids = ['1a9m']
+    protein_ids = ['6ugp']
 
     for obj in protein_ids:
         docking_test(obj)
-
-
-
-

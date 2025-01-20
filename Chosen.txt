@@ -2,10 +2,6 @@
 HIV-1 protease G48H
 https://www.rcsb.org/structure/1A9M
 
-6ugp	6ugp_pocket.pdb	Chain A	Residues 192-200	GLY-SER-LEU-THR-THR-PRO-PRO-LEU-LEU *
-Human Carbonic Anhydrase 2
-https://www.rcsb.org/structure/6UGPw p
-
 1qin	1qin_pocket.pdb	Chain B	Residues 154-162	ASP-GLY-LYS-MET-LYS-GLY-LEU-ALA-PHE *
 lactoylglutathione lyase
 https://www.rcsb.org/structure/1QIN
