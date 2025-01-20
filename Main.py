@@ -12,6 +12,7 @@ from Protein_Folding.protein_folding_problem import ProteinFoldingProblem
 from qiskit_ibm_runtime import QiskitRuntimeService
 from Qiskit_VQE import VQE5
 from Qiskit_VQE import StateCalculator
+import time
 
 def predict_protein_structure(
     main_chain_sequence: str,
@@ -63,7 +64,7 @@ def predict_protein_structure(
 
     energy_list, res, ansatz, top_results = vqe_instance.run_vqe()
 
-    output_energy_path = f"Result/process_data/{protein_id}/System_Enegry"
+    output_energy_path = f"Result/process_data/best_group/{protein_id}/System_Enegry"
     os.makedirs(output_energy_path, exist_ok=True)
     with open(f"{output_energy_path}/energy_list_{protein_id}.txt", 'w') as file:
         for item in energy_list:
@@ -74,13 +75,13 @@ def predict_protein_structure(
 
     protein_result = protein_folding_problem.interpret(probability_distribution)
 
-    output_prob_path = f"Result/process_data/{protein_id}/Prob_distribution"
+    output_prob_path = f"Result/process_data/best_group/{protein_id}/Prob_distribution"
     os.makedirs(output_prob_path, exist_ok=True)
     with open(f"{output_prob_path}/prob_distribution.txt", 'w') as file:
         for key, value in probability_distribution.items():
             file.write(f'{key}: {value}\n')
 
-    output_dir = f"Result/process_data/{protein_id}"
+    output_dir = f"Result/process_data/best_group/{protein_id}"
     os.makedirs(output_dir, exist_ok=True)
     protein_result.save_xyz_file(name=protein_id, path=output_dir)
     print("Protein structure saved as .xyz file")
@@ -118,11 +119,21 @@ if __name__ == '__main__':
         ("KSIVDSGTTNLR", "1fkn"),
         ("DWGGM", "3ans"),
     ]
+    log_file_path = "execution_time_log.txt"
+    with open(log_file_path, 'w') as log_file:
+        log_file.write("Protein_ID\tExecution_Time(s)\n")
 
     for sequence, protein_name in protein_list:
+
+        start_time = time.time()
+
         predict_protein_structure(
             main_chain_sequence=sequence,
             protein_id=protein_name,
             service=service,
             max_iter=150
         )
+
+        end_time = time.time()
+        execution_time = end_time - start_time
+        log_file.write(f"{protein_name}\t{execution_time:.2f}\n")
