@@ -107,12 +107,16 @@ if __name__ == '__main__':
         token=' '      # Replace with your real token
     )
 
+    # protein_list = [
+    #     ("GSLTTPPLL", "6ugp"),
+    #     ("DGKMKGLAF", "1qin"),
+    #     ("IHGIGGFI",  "1a9m"),
+    #     ("NNLGTIAKSGT", "3b26"),
+    #     ("GAVEDGATMTFF", "2xxx")
+    # ]
     protein_list = [
-        ("GSLTTPPLL", "6ugp"),
-        ("DGKMKGLAF", "1qin"),
-        ("IHGIGGFI",  "1a9m"),
-        ("NNLGTIAKSGT", "3b26"),
-        ("GAVEDGATMTFF", "2xxx")
+        ("KSIVDSGTTNLR", "1fkn"),
+        ("DWGGM", "3ans"),
     ]
 
     for sequence, protein_name in protein_list:
