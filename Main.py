@@ -117,7 +117,6 @@ if __name__ == '__main__':
     # ]
 
     protein_list = [
-        ("KSIVDSGTTNLR", "1fkn"),
         ("DWGGM", "3ans"),
     ]
     log_file_path = "execution_time_log.txt"
