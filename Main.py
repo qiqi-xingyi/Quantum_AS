@@ -115,6 +115,7 @@ if __name__ == '__main__':
     #     ("NNLGTIAKSGT", "3b26"),
     #     ("GAVEDGATMTFF", "2xxx")
     # ]
+
     protein_list = [
         ("KSIVDSGTTNLR", "1fkn"),
         ("DWGGM", "3ans"),
@@ -123,17 +124,17 @@ if __name__ == '__main__':
     with open(log_file_path, 'w') as log_file:
         log_file.write("Protein_ID\tExecution_Time(s)\n")
 
-    for sequence, protein_name in protein_list:
+        for sequence, protein_name in protein_list:
 
-        start_time = time.time()
+            start_time = time.time()
 
-        predict_protein_structure(
-            main_chain_sequence=sequence,
-            protein_id=protein_name,
-            service=service,
-            max_iter=150
-        )
+            predict_protein_structure(
+                main_chain_sequence=sequence,
+                protein_id=protein_name,
+                service=service,
+                max_iter=150
+            )
 
-        end_time = time.time()
-        execution_time = end_time - start_time
-        log_file.write(f"{protein_name}\t{execution_time:.2f}\n")
+            end_time = time.time()
+            execution_time = end_time - start_time
+            log_file.write(f"{protein_name}\t{execution_time:.2f}\n")
