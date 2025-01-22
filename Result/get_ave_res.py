@@ -114,7 +114,7 @@ def process_all_results(base_dir, output_summary_file):
 
 
 if __name__ == "__main__":
-    docking_output_path = "docking_output/docking_output_1a9m"
+    docking_output_path = "docking_output/docking_output_3ans"
 
     base_dir = f"./process_data/{docking_output_path}"
     output_summary_file = f"./process_data/{docking_output_path}/summary_results.txt"
