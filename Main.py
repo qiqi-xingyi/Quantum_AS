@@ -119,6 +119,7 @@ if __name__ == '__main__':
     protein_list = [
         ("DWGGM", "3ans"),
     ]
+
     log_file_path = "execution_time_log.txt"
     with open(log_file_path, 'w') as log_file:
         log_file.write("Protein_ID\tExecution_Time(s)\n")
