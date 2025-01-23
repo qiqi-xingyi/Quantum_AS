@@ -109,7 +109,6 @@ if __name__ == '__main__':
     )
 
     # protein_list = [
-    #     ("GSLTTPPLL", "6ugp"),
     #     ("DGKMKGLAF", "1qin"),
     #     ("IHGIGGFI",  "1a9m"),
     #     ("NNLGTIAKSGT", "3b26"),
