@@ -38,8 +38,8 @@ def docking_test(protein_id):
 
         # Quantum docking
         docking = AutoDockDocking(
-            f"./process_data/best_group/{protein_id}/full_model.pdbqt",
-            f"./process_data/best_group/{protein_id}/PDBbind_data/{protein_id}/{protein_id}_ligand_trans.mol2",
+            f"./process_data/new_group/{protein_id}/full_model.pdbqt",
+            f"./process_data/new_group/{protein_id}/PDBbind_data/{protein_id}/{protein_id}_ligand_trans.mol2",
             quantum_output_dir,
             f"docking_log_trial_{trial}.txt",
             seed
@@ -54,8 +54,8 @@ def docking_test(protein_id):
 
         # AF3 docking
         docking = AutoDockDocking(
-            f"./process_data/best_group/{protein_id}/fold_{protein_id}/fold_{protein_id}_model_4.pdbqt",
-            f"./process_data/best_group/{protein_id}/PDBbind_data/{protein_id}/{protein_id}_ligand_trans.mol2",
+            f"./process_data/new_group/{protein_id}/fold_{protein_id}/fold_{protein_id}_model_4.pdbqt",
+            f"./process_data/new_group/{protein_id}/PDBbind_data/{protein_id}/{protein_id}_ligand_trans.mol2",
             af3_output_dir,
             f"af3_docking_log_trial_{trial}.txt",
             seed
@@ -67,7 +67,7 @@ def docking_test(protein_id):
 if __name__ == "__main__":
 
     # protein_ids = ['1a9m','1qin','2xxx','3b26','6ugp']
-    protein_ids = ['1fkn','3ans']
+    protein_ids = ['3ans']
 
     for obj in protein_ids:
         docking_test(obj)
