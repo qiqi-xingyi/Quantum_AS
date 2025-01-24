@@ -92,7 +92,7 @@ if __name__ == '__main__':
         plt.title(f"{title}")
         plt.xlabel("Trial")
         plt.ylabel("Affinity")
-        plt.legend()
+        # plt.legend()
         plt.tight_layout()
 
         # 保存图像到 img 文件夹下

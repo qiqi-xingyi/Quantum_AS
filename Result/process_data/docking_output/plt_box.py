@@ -12,7 +12,9 @@ import matplotlib.pyplot as plt
 # 假设这 7 个子文件夹的名字如下（可以换成自己的实际目录名）
 subfolders = ["docking_output_1a9m", "docking_output_1fkn", "docking_output_1qin", "docking_output_2xxx",
               "docking_output_3ans", "docking_output_3b26", "docking_output_6mu3"]
+
 if __name__ == '__main__':
+
     plt.rcParams['font.family'] = 'Arial'
     # 准备存储每个子文件夹提取出的平均值
     quantum_mean_affinity_list = []
@@ -92,7 +94,7 @@ if __name__ == '__main__':
 
     # (A) Affinity 柱状图
     plt.figure(figsize=(9, 3))
-    bars = plt.bar(x - bar_width / 2, quantum_mean_affinity_list, width=bar_width,color='tab:orange', label='Quantum', alpha=0.7)
+    plt.bar(x - bar_width / 2, quantum_mean_affinity_list, width=bar_width,color='tab:orange', label='Quantum', alpha=0.7)
     plt.bar(x + bar_width / 2, af3_mean_affinity_list, width=bar_width,color='tab:blue', label='AF3', alpha=0.7)
     plt.xticks(x, labels, rotation=30)
     plt.ylabel("Affinity")
@@ -100,10 +102,10 @@ if __name__ == '__main__':
     plt.legend()
     plt.tight_layout()
 
-    for i, bar in enumerate(bars):
-        # facecolor 表示柱子的填充颜色(RGBA)
-        face_color = bar.get_facecolor()
-        print(f"Bar Quantum {i} face color:", face_color)
+    # for i, bar in enumerate(bars):
+    #     # facecolor 表示柱子的填充颜色(RGBA)
+    #     face_color = bar.get_facecolor()
+    #     print(f"Bar Quantum {i} face color:", face_color)
     # plt.show()
     # 如果要保存图像，可以使用：
     plt.savefig("img/Affinity_comparison.png", dpi=600)
