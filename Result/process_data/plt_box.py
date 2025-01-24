@@ -95,8 +95,8 @@ if __name__ == '__main__':
     plt.tight_layout()
 
     # Save the combined figure as one file
-    # os.makedirs('img_6mu3', exist_ok=True)
-    plt.savefig('./img_6mu3/combined_boxplot.png', dpi=600, bbox_inches='tight')
+    os.makedirs('img', exist_ok=True)
+    plt.savefig('./img/combined_boxplot.png', dpi=600, bbox_inches='tight')
 
     # Show the combined figure
     plt.show()

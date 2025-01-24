@@ -10,7 +10,7 @@ from files_tool import DockingFilePreparer
 
 if __name__ == "__main__":
 
-    preparer = DockingFilePreparer("process_data/create_structure/6mu3_L/6mu3_top4.pdb")
+    preparer = DockingFilePreparer("process_data/create_structure/6mu3/6mu3_top4.pdb")
     preparer.prepare_pdbqt()
 
 
