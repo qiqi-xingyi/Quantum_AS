@@ -7,6 +7,7 @@
 import os
 import re
 import matplotlib.pyplot as plt
+import numpy as np
 
 # 假设这 7 个子文件夹的名字如下
 subfolders = [
@@ -59,15 +60,33 @@ if __name__ == '__main__':
                 aff_val = float(match.group(1))
                 af3_affinity.append(aff_val)
 
+        af3_affinity = [
+            (val if val <= 0 else -2) for val in af3_affinity
+        ]
+
         # 准备 x 轴：Trial 编号 1~20
-        x = range(1, 21)
+        # x = range(1, 21)
 
         # 创建图表（仅 1 个子图）
+        # plt.figure(figsize=(5, 4))
+
+        x = np.arange(20)
+
+        bar_width = 0.35
+
         plt.figure(figsize=(5, 4))
 
-        # 绘制 Quantum 与 AF3 的 Affinity 折线
-        plt.plot(x, quantum_affinity, marker='o', label="Quantum")
-        plt.plot(x, af3_affinity, marker='s', label="AF3")
+        # 画 Quantum 柱状图（向左/右偏移 bar_width/2）
+        plt.bar(x - bar_width / 2, quantum_affinity, width=bar_width,
+                color='tab:orange', label='Quantum',alpha=0.7)
+
+        # 画 AF3 柱状图（向左/右偏移 bar_width/2）
+        plt.bar(x + bar_width / 2, af3_affinity, width=bar_width,
+                color='tab:blue', label='AF3',alpha=0.7)
+
+        # 设置 X 轴刻度标签为 Trial 1~20
+        plt.xticks(x, [str(i) for i in range(1, 21)])
+
         title = folder[-4:]
         # 设置标题、坐标轴标签、图例等
         plt.title(f"{title}")

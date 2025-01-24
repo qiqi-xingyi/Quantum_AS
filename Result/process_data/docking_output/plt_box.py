@@ -92,13 +92,18 @@ if __name__ == '__main__':
 
     # (A) Affinity 柱状图
     plt.figure(figsize=(9, 3))
-    plt.bar(x - bar_width / 2, quantum_mean_affinity_list, width=bar_width, label='Quantum', alpha=0.7)
-    plt.bar(x + bar_width / 2, af3_mean_affinity_list, width=bar_width, label='AF3', alpha=0.7)
+    bars = plt.bar(x - bar_width / 2, quantum_mean_affinity_list, width=bar_width,color='tab:orange', label='Quantum', alpha=0.7)
+    plt.bar(x + bar_width / 2, af3_mean_affinity_list, width=bar_width,color='tab:blue', label='AF3', alpha=0.7)
     plt.xticks(x, labels, rotation=30)
     plt.ylabel("Affinity")
     # plt.title("Overall Average Affinity Comparison (Quantum vs AF3)")
     plt.legend()
     plt.tight_layout()
+
+    for i, bar in enumerate(bars):
+        # facecolor 表示柱子的填充颜色(RGBA)
+        face_color = bar.get_facecolor()
+        print(f"Bar Quantum {i} face color:", face_color)
     # plt.show()
     # 如果要保存图像，可以使用：
     plt.savefig("img/Affinity_comparison.png", dpi=600)
@@ -106,8 +111,8 @@ if __name__ == '__main__':
 
     # (B) RMSD Lower Bound 柱状图
     plt.figure(figsize=(7, 3))
-    plt.bar(x - bar_width / 2, quantum_mean_rmsd_lower_list, width=bar_width, label='Quantum', alpha=0.7)
-    plt.bar(x + bar_width / 2, af3_mean_rmsd_lower_list, width=bar_width, label='AF3', alpha=0.7)
+    plt.bar(x - bar_width / 2, quantum_mean_rmsd_lower_list, width=bar_width,color='tab:orange', label='Quantum', alpha=0.7)
+    plt.bar(x + bar_width / 2, af3_mean_rmsd_lower_list, width=bar_width,color='tab:blue', label='AF3', alpha=0.7)
     plt.xticks(x, labels, rotation=30)
     plt.ylabel("RMSD Lower Bound")
     # plt.title("Overall Average RMSD Lower Bound Comparison (Quantum vs AF3)")
@@ -118,8 +123,8 @@ if __name__ == '__main__':
 
     # (C) RMSD Upper Bound 柱状图
     plt.figure(figsize=(7, 3))
-    plt.bar(x - bar_width / 2, quantum_mean_rmsd_upper_list, width=bar_width, label='Quantum', alpha=0.7)
-    plt.bar(x + bar_width / 2, af3_mean_rmsd_upper_list, width=bar_width, label='AF3', alpha=0.7)
+    plt.bar(x - bar_width / 2, quantum_mean_rmsd_upper_list, width=bar_width,color='tab:orange', label='Quantum', alpha=0.7)
+    plt.bar(x + bar_width / 2, af3_mean_rmsd_upper_list, width=bar_width,color='tab:blue', label='AF3', alpha=0.7)
     plt.xticks(x, labels, rotation=30)
     plt.ylabel("RMSD Upper Bound")
     # plt.title("Overall Average RMSD Upper Bound Comparison (Quantum vs AF3)")
