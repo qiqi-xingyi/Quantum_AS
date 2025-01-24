@@ -13,7 +13,7 @@ import matplotlib.pyplot as plt
 subfolders = ["docking_output_1a9m", "docking_output_1fkn", "docking_output_1qin", "docking_output_2xxx",
               "docking_output_3ans", "docking_output_3b26", "docking_output_6mu3"]
 if __name__ == '__main__':
-
+    plt.rcParams['font.family'] = 'Arial'
     # 准备存储每个子文件夹提取出的平均值
     quantum_mean_affinity_list = []
     af3_mean_affinity_list = []

@@ -20,6 +20,8 @@ subfolders = [
 ]
 
 if __name__ == '__main__':
+    plt.rcParams['font.family'] = 'Arial'
+
     for folder in subfolders:
         file_path = os.path.join(folder, "summary_results.txt")
 
@@ -61,14 +63,14 @@ if __name__ == '__main__':
         x = range(1, 21)
 
         # 创建图表（仅 1 个子图）
-        plt.figure(figsize=(8, 5))
+        plt.figure(figsize=(5, 4))
 
         # 绘制 Quantum 与 AF3 的 Affinity 折线
         plt.plot(x, quantum_affinity, marker='o', label="Quantum")
         plt.plot(x, af3_affinity, marker='s', label="AF3")
-
+        title = folder[-4:]
         # 设置标题、坐标轴标签、图例等
-        plt.title(f"Affinity Comparison - {folder}")
+        plt.title(f"{title}")
         plt.xlabel("Trial")
         plt.ylabel("Affinity")
         plt.legend()
