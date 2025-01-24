@@ -88,10 +88,10 @@ if __name__ == '__main__':
     labels = [sf[-4:] for sf in subfolders]
     # x 轴的刻度位置
     x = np.arange(len(subfolders))  # 0, 1, 2, ..., 6 对应 7 个文件夹
-    bar_width = 0.35  # 柱子的宽度
+    bar_width = 0.25  # 柱子的宽度
 
     # (A) Affinity 柱状图
-    plt.figure(figsize=(7, 3))
+    plt.figure(figsize=(9, 3))
     plt.bar(x - bar_width / 2, quantum_mean_affinity_list, width=bar_width, label='Quantum', alpha=0.7)
     plt.bar(x + bar_width / 2, af3_mean_affinity_list, width=bar_width, label='AF3', alpha=0.7)
     plt.xticks(x, labels, rotation=30)
