@@ -2,7 +2,7 @@
 # @Time : 11/18/24 9:43 AM
 # @Author : Yuqi Zhang
 # @Email : yzhan135@kent.edu
-# @File : plt_box.py
+# @File : plt_line.py
 
 import os
 import re
