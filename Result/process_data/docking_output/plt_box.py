@@ -93,13 +93,13 @@ if __name__ == '__main__':
     bar_width = 0.25  # 柱子的宽度
 
     # (A) Affinity 柱状图
-    plt.figure(figsize=(8, 3))
+    plt.figure(figsize=(6, 3))
     plt.bar(x - bar_width / 2, quantum_mean_affinity_list, width=bar_width,color='tab:orange', label='Quantum', alpha=0.7)
     plt.bar(x + bar_width / 2, af3_mean_affinity_list, width=bar_width,color='tab:blue', label='AF3', alpha=0.7)
     plt.xticks(x, labels, rotation=30)
     plt.ylabel("Affinity")
     # plt.title("Overall Average Affinity Comparison (Quantum vs AF3)")
-    # plt.legend()
+    plt.legend()
     plt.tight_layout()
 
     # for i, bar in enumerate(bars):
@@ -108,7 +108,7 @@ if __name__ == '__main__':
     #     print(f"Bar Quantum {i} face color:", face_color)
     # plt.show()
     # 如果要保存图像，可以使用：
-    plt.savefig("img/Affinity_comparison.png", dpi=600)
+    plt.savefig("img_box/Affinity_comparison.png", dpi=600)
     # plt.close()
 
     # (B) RMSD Lower Bound 柱状图
@@ -121,7 +121,7 @@ if __name__ == '__main__':
     plt.legend()
     plt.tight_layout()
     # plt.show()
-    plt.savefig("img/RLB.png", dpi=600)
+    plt.savefig("img_box/RLB.png", dpi=600)
 
     # (C) RMSD Upper Bound 柱状图
     plt.figure(figsize=(6, 3))
@@ -132,5 +132,5 @@ if __name__ == '__main__':
     # plt.title("Overall Average RMSD Upper Bound Comparison (Quantum vs AF3)")
     plt.legend()
     plt.tight_layout()
-    plt.savefig("img/RUB.png", dpi=600)
+    plt.savefig("img_box/RUB.png", dpi=600)
     # plt.show()
