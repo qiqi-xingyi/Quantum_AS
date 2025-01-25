@@ -21,6 +21,7 @@ subfolders = [
 ]
 
 if __name__ == '__main__':
+
     plt.rcParams['font.family'] = 'Arial'
 
     for folder in subfolders:
