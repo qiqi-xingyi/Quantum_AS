@@ -8,7 +8,7 @@ import os
 import re
 import matplotlib.pyplot as plt
 
-# 7 个子文件夹
+
 subfolders = [
     "docking_output_1a9m",
     "docking_output_1fkn",
@@ -19,7 +19,7 @@ subfolders = [
     "docking_output_6mu3"
 ]
 
-# 可调参数
+
 BOX_WIDTH = 0.4
 MEDIAN_LINE_COLOR = "red"
 MEDIAN_LINE_WIDTH = 2
@@ -39,7 +39,7 @@ if __name__ == '__main__':
     for folder in subfolders:
         file_path = os.path.join(folder, "summary_results.txt")
 
-        # 定义存储完整数据（原始）
+
         quantum_affinity_all = []
         quantum_rmsd_lower_all = []
         quantum_rmsd_upper_all = []
@@ -60,7 +60,7 @@ if __name__ == '__main__':
 
         pattern = r"Affinity\s*=\s*([-0-9\.]+).*Lower Bound\s*=\s*([-0-9\.]+).*Upper Bound\s*=\s*([-0-9\.]+)"
 
-        # 解析 Quantum
+
         for i in range(q_start, q_start + 20):
             match = re.search(pattern, lines[i])
             if match:
