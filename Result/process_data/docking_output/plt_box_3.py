@@ -186,6 +186,3 @@ if __name__ == '__main__':
         out_fig_path = os.path.join("img_box", f"{folder}_boxplot.png")
         plt.savefig(out_fig_path, dpi=600)
         plt.close()
-
-
-
