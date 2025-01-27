@@ -9,7 +9,6 @@ import re
 import matplotlib.pyplot as plt
 import numpy as np
 
-# 假设这 7 个子文件夹的名字如下
 subfolders = [
     "docking_output_1a9m",
     "docking_output_1fkn",
