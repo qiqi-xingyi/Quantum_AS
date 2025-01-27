@@ -71,7 +71,6 @@ if __name__ == '__main__':
                 quantum_rmsd_lower_all.append(lb_val)
                 quantum_rmsd_upper_all.append(ub_val)
 
-        # 解析 AF3
         for i in range(a_start, a_start + 20):
             match = re.search(pattern, lines[i])
             if match:
@@ -82,11 +81,6 @@ if __name__ == '__main__':
                 af3_rmsd_lower_all.append(lb_val)
                 af3_rmsd_upper_all.append(ub_val)
 
-        # -------------------------------------------------------------------
-        # 只在绘图时排除 Affinity > 0 的值：
-        # 1) 原始数据保存在 *_all 中，可做平均值等计算
-        # 2) 新建 *_plot 列表，在箱图中只使用 <= 0 的值
-        # -------------------------------------------------------------------
         quantum_affinity_plot = [val for val in quantum_affinity_all if val <= 0]
         af3_affinity_plot = [val for val in af3_affinity_all if val <= 0]
 
@@ -96,26 +90,15 @@ if __name__ == '__main__':
         quantum_rmsd_upper_plot = quantum_rmsd_upper_all[:]
         af3_rmsd_upper_plot = af3_rmsd_upper_all[:]
 
-        # 例如，如果还想排除 RMSD > 某阈值，也可以做类似列表推导
-
-        # -------------------------------------------------------------------
-        # 在此处，你可以使用 quantum_affinity_all 来计算平均值
-        # 而不是 quantum_affinity_plot
-        # -------------------------------------------------------------------
-        # 示例：计算包含>0值在内的平均值
         import numpy as np
         avg_quantum_aff = np.mean(quantum_affinity_all)
         avg_af3_aff = np.mean(af3_affinity_all)
-        # 这里只是示例，你可以按需使用
 
-        # -------------------- 绘制箱型图 --------------------
         fig, axs = plt.subplots(1, 3, figsize=(8, 3))
 
-        # 大标题
         folder_suffix = folder[-4:]
         plt.suptitle(f"{folder_suffix}", fontsize=16)
 
-        # boxplot 全局属性
         medianprops = dict(color=MEDIAN_LINE_COLOR, linewidth=MEDIAN_LINE_WIDTH)
         whiskerprops = dict(color=WHISKER_COLOR, linewidth=WHISKER_LINE_WIDTH)
         capprops = dict(color=CAP_COLOR, linewidth=CAP_LINE_WIDTH)
@@ -145,7 +128,6 @@ if __name__ == '__main__':
             patch.set_alpha(0.7)
         axs[0].set_ylabel("Affinity")
 
-        # -- 子图 2: RMSD Lower Bound --
         data_lb_plot = [quantum_rmsd_lower_plot, af3_rmsd_lower_plot]
         bp_lb = axs[1].boxplot(
             data_lb_plot,
@@ -163,7 +145,6 @@ if __name__ == '__main__':
             patch.set_alpha(0.7)
         axs[1].set_ylabel("RMSD Lower Bound")
 
-        # -- 子图 3: RMSD Upper Bound --
         data_ub_plot = [quantum_rmsd_upper_plot, af3_rmsd_upper_plot]
         bp_ub = axs[2].boxplot(
             data_ub_plot,
