@@ -25,7 +25,7 @@ from qiskit.visualization import circuit_drawer
 import matplotlib.pyplot as plt
 
 # 创建 EfficientSU2 电路
-num_qubits = 77  # 指定量子比特数
+num_qubits = 15  # 指定量子比特数
 entanglement = 'linear'
 reps = 3  # 指定循环层数
 
@@ -37,15 +37,15 @@ if __name__ == '__main__':
 
     print(f"Depth（reps={reps}）:", decomposed_circuit.depth())
 
-    # circuit_image = circuit_drawer(
-    #     decomposed_circuit,
-    #     output='mpl',  # 使用 matplotlib 方式输出
-    #     fold=-1,  # 不换行，显示完整电路
-    #     idle_wires=True,  # 显示所有闲置的量子比特
-    #     cregbundle=True,  # 不合并经典位，逐个位显示
-    #     plot_barriers=True,  # 显示电路中的障碍
-    #     # style='iqx'        # 如果想使用特定主题，可以打开此行
-    # )
-    # plt.show()
-    #
-    # circuit_image.savefig("efficient_su2_circuit.png")
+    circuit_image = circuit_drawer(
+        decomposed_circuit,
+        output='mpl',  # 使用 matplotlib 方式输出
+        fold=-1,  # 不换行，显示完整电路
+        idle_wires=True,  # 显示所有闲置的量子比特
+        cregbundle=True,  # 不合并经典位，逐个位显示
+        plot_barriers=True,  # 显示电路中的障碍
+        # style='iqx'        # 如果想使用特定主题，可以打开此行
+    )
+    plt.show()
+
+    circuit_image.savefig("efficient_su2_circuit.png",dpi=600)

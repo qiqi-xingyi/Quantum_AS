@@ -108,16 +108,16 @@ if __name__ == '__main__':
         token=' '      # Replace with your real token
     )
 
-    # protein_list = [
-    #     ("DGKMKGLAF", "1qin"),
-    #     ("IHGIGGFI",  "1a9m"),
-    #     ("NNLGTIAKSGT", "3b26"),
-    #     ("GAVEDGATMTFF", "2xxx")
-    # ]
-
     protein_list = [
+        ("DGKMKGLAF", "1qin"),
+        ("IHGIGGFI",  "1a9m"),
+        ("KSIVDSGTTNLR" , "1fkn"),
+        ("NNLGTIAKSGT", "3b26"),
+        ("GAVEDGATMTFF", "2xxx"),
         ("DWGGM", "3ans"),
+        ("YAGYS", "6mu3")
     ]
+
 
     log_file_path = "execution_time_log.txt"
     with open(log_file_path, 'w') as log_file:
