@@ -124,6 +124,7 @@ class QuantumResult:
             sequence='protein_full',
             assess_methods=(assess.DOPE, assess.GA341),
         )
+        a.run_code = '9999'
         a.starting_model = 1
         a.ending_model = 1
         a.make()

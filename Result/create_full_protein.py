@@ -10,7 +10,7 @@ from files_tool import QuantumResult
 
 if __name__ == '__main__':
 
-    xyz_file_path = 'process_data/best_group/1a9m/1a9m.xyz'
+    xyz_file_path = 'process_data/best_group/1fkn/1fkn.xyz'
 
     quantum_result = QuantumResult(xyz_file_path)
 

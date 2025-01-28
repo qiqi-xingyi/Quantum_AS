@@ -91,4 +91,4 @@ def process_all_proteins(root_dir="process_data/best_group"):
 
 if __name__ == '__main__':
 
-    process_all_proteins("process_data/new_group")
+    process_all_proteins("process_data/best_group")
