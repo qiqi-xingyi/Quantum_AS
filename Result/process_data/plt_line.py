@@ -11,8 +11,10 @@ if __name__ == '__main__':
 
     plt.rcParams['font.family'] = 'Arial'
 
+    protein = '6mu3'
+
     # Load energy data from the file
-    file_path = 'best_group/2xxx/System_Enegry/energy_list_2xxx.txt'
+    file_path = f'best_group/{protein}/System_Enegry/energy_list_{protein}.txt'
     with open(file_path, 'r') as file:
         energy_data = [float(line.strip()) for line in file]
 
@@ -20,7 +22,7 @@ if __name__ == '__main__':
     energy_data = np.array(energy_data)
 
     # Find the indices of the 6 lowest points (convert to integers if necessary)
-    lowest_indices = np.argsort(energy_data)[:6]  # Get indices of 6 smallest values
+    lowest_indices = np.argsort(energy_data)[:1]  # Get indices of 6 smallest values
     lowest_indices = lowest_indices.astype(int)  # Ensure indices are integers
     lowest_values = energy_data[lowest_indices]  # Get corresponding values
 
@@ -48,7 +50,7 @@ if __name__ == '__main__':
     plt.legend(fontsize=12)
 
     # Save the plot
-    plt.savefig('./img/energy_variation_2xxx.png', dpi=600, bbox_inches='tight')
+    plt.savefig(f'./img/energy_variation_{protein}.png', dpi=600, bbox_inches='tight')
 
     # Show the plot
     plt.tight_layout()
