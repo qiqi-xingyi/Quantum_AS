@@ -51,7 +51,6 @@ def build_protein_and_get_qubit_info(main_chain_sequence: str, protein_id: str):
 
     return qubits_num, circuit_depth
 
-
 if __name__ == '__main__':
     protein_list = [
         ("DGKMKGLAF", "1qin"),
