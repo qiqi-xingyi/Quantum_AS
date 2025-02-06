@@ -5,7 +5,6 @@
 
 """Builds qubit operators for all Hamiltonian terms in the protein folding problem."""
 from typing import Union
-
 import numpy as np
 
 from qiskit.quantum_info import Operator, SparsePauliOp, Pauli
@@ -23,7 +22,6 @@ from .peptide.beads.base_bead import BaseBead
 from .peptide.Peptide import Peptide
 
 # pylint: disable=too-few-public-methods
-
 
 class QubitOpBuilder:
     """Builds qubit operators for all Hamiltonian terms in the protein folding problem."""
@@ -106,8 +104,6 @@ class QubitOpBuilder:
             else (0, 0)
         )
 
-
-
         # The Hamiltonian of the total system
         h_total = h_chiral + h_back + h_short + h_bbbb + h_bbsc + h_scbb + h_scsc
 
@@ -167,7 +163,6 @@ class QubitOpBuilder:
 
         h_back = 0
 
-        ####
         for i in range(len(main_chain) - 2):
             h_back += penalty_back * self._create_turn_operators(main_chain[i], main_chain[i + 1])
 
