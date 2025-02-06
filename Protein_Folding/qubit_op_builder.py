@@ -560,30 +560,3 @@ class QubitOpBuilder:
 
         return h_short
 
-    # def _create_h_geometric_constraint(self) -> Union[SparsePauliOp, Pauli]:
-    #     """
-    #     Creates a Hamiltonian term that enforces a specific geometric structure,
-    #     necessary for ligand binding, within the protein's active site.
-    #
-    #     Returns:
-    #         A Hamiltonian term that represents the geometric constraints imposed
-    #         by the structural requirements of the binding site.
-    #     """
-    #
-    #     penalty_geometry = self._penalty_parameters.penalty_geometry
-    #     h_geometry = 0
-    #
-    #
-    #     main_chain = self._peptide.get_main_chain
-    #     main_chain_len = len(main_chain)
-    #
-    #
-    #     for i in range(1, main_chain_len - 3):
-    #
-    #         h_geometry += penalty_geometry * self._create_turn_operators(
-    #             main_chain[i], main_chain[i + 2]
-    #         )
-    #
-    #
-    #     h_geometry = _fix_qubits(h_geometry, self._has_side_chain_second_bead)
-    #     return h_geometry
