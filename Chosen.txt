@@ -2,15 +2,19 @@
 HIV-1 protease G48H
 https://www.rcsb.org/structure/1A9M
 
+1fkn Chain A Residues 224-235(335-339)
+
 1qin	1qin_pocket.pdb	Chain B	Residues 154-162	ASP-GLY-LYS-MET-LYS-GLY-LEU-ALA-PHE *
 lactoylglutathione lyase
 https://www.rcsb.org/structure/1QIN
 
-3b26	3b26_pocket.pdb	Chain A	Residues 98-108	ASN-ASN-LEU-GLY-THR-ILE-ALA-LYS-SER-GLY-THR *
+3ans Chain A Residues 335-339
+
+3b26	3b26_pocket.pdb	Chain A	Residues 98-108(105-115) ASN-ASN-LEU-GLY-THR-ILE-ALA-LYS-SER-GLY-THR *
 Heat shock protein HSP 90-alpha
 https://www.rcsb.org/structure/3B26
 
-2xxx	2xxx_pocket.pdb	Chain A	Residues 136-147	GLY-ALA-VAL-GLU-ASP-GLY-ALA-THR-MET-THR-PHE-PHE *
+2xxx	2xxx_pocket.pdb	Chain A	Residues 136-147(683-694)	GLY-ALA-VAL-GLU-ASP-GLY-ALA-THR-MET-THR-PHE-PHE *
 GLUTAMATE RECEPTOR, IONOTROPIC KAINATE 2
 https://www.rcsb.org/structure/2XXX
 
