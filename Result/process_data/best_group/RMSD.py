@@ -111,15 +111,14 @@ def calculate_rmsd(
     return rmsd_value
 
 
-
 # 1) 指定完整蛋白和片段的文件路径（可分别为 .pdb 或 .cif）
-full_structure_file = "/path/to/full_protein.pdb"  # 或 .cif
-fragment_structure_file = "/path/to/fragment.cif"  # 或 .pdb
+full_structure_file = "./1a9m/PDBbind_data/1a9m/1a9m_pocket.pdb"  # 或 .cif
+fragment_structure_file = "./1a9m/full_model.pdb"  # 或 .pdb
 
 # 2) 完整蛋白中需要进行比对的链和残基范围
 full_chain_id = "A"
-start_resid = 10
-end_resid = 20
+start_resid = 47
+end_resid = 54
 
 # 3) 片段对应的链名
 frag_chain_id = "A"
@@ -128,7 +127,7 @@ frag_chain_id = "A"
 selection_mode = "CA"
 
 # 5) 输出 RMSD 的文本文件名
-output_file_name = "rmsd_result.txt"
+output_file_name = "./1a9m/rmsd_result_Q.txt"
 
 # =========== 主程序部分 ===========
 
