@@ -39,15 +39,15 @@ class VinaDockingResultParser:
 
     def calculate_averages(self, results):
         """
-        Calculate average affinity and RMSD values.
+        Calculate average affinity and RMSD.txt values.
 
         Parameters:
             results (list of tuples): Each tuple contains (affinity, rmsd.l.b., rmsd.u.b.)
 
         Returns:
             avg_affinity (float): Average affinity (kcal/mol)
-            avg_rmsd_lb (float): Average RMSD lower bound (Å)
-            avg_rmsd_ub (float): Average RMSD upper bound (Å)
+            avg_rmsd_lb (float): Average RMSD.txt lower bound (Å)
+            avg_rmsd_ub (float): Average RMSD.txt upper bound (Å)
         """
         total_affinity = sum(r[0] for r in results)
         total_rmsd_lb = sum(r[1] for r in results)
@@ -102,13 +102,13 @@ def process_all_results(base_dir, output_summary_file):
     with open(output_summary_file, "w") as summary_file:
         summary_file.write("Quantum Results:\n")
         for i, (affinity, rmsd_lb, rmsd_ub) in enumerate(quantum_results, 1):
-            summary_file.write(f"Trial {i}: Affinity = {affinity:.4f}, RMSD Lower Bound = {rmsd_lb:.4f}, RMSD Upper Bound = {rmsd_ub:.4f}\n")
-        summary_file.write(f"Overall Average: Affinity = {quantum_overall_avg[0]:.4f}, RMSD Lower Bound = {quantum_overall_avg[1]:.4f}, RMSD Upper Bound = {quantum_overall_avg[2]:.4f}\n\n")
+            summary_file.write(f"Trial {i}: Affinity = {affinity:.4f}, RMSD.txt Lower Bound = {rmsd_lb:.4f}, RMSD.txt Upper Bound = {rmsd_ub:.4f}\n")
+        summary_file.write(f"Overall Average: Affinity = {quantum_overall_avg[0]:.4f}, RMSD.txt Lower Bound = {quantum_overall_avg[1]:.4f}, RMSD.txt Upper Bound = {quantum_overall_avg[2]:.4f}\n\n")
 
         summary_file.write("AF3 Results:\n")
         for i, (affinity, rmsd_lb, rmsd_ub) in enumerate(af3_results, 1):
-            summary_file.write(f"Trial {i}: Affinity = {affinity:.4f}, RMSD Lower Bound = {rmsd_lb:.4f}, RMSD Upper Bound = {rmsd_ub:.4f}\n")
-        summary_file.write(f"Overall Average: Affinity = {af2_overall_avg[0]:.4f}, RMSD Lower Bound = {af2_overall_avg[1]:.4f}, RMSD Upper Bound = {af2_overall_avg[2]:.4f}\n\n")
+            summary_file.write(f"Trial {i}: Affinity = {affinity:.4f}, RMSD.txt Lower Bound = {rmsd_lb:.4f}, RMSD.txt Upper Bound = {rmsd_ub:.4f}\n")
+        summary_file.write(f"Overall Average: Affinity = {af2_overall_avg[0]:.4f}, RMSD.txt Lower Bound = {af2_overall_avg[1]:.4f}, RMSD.txt Upper Bound = {af2_overall_avg[2]:.4f}\n\n")
 
     print(f"Summary saved to {output_summary_file}")
 

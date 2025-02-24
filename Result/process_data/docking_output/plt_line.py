@@ -39,7 +39,7 @@ if __name__ == '__main__':
             if "AF3 Results:" in line:
                 a_start = i + 1  # 下 20 行是 AF3 的数据
 
-        # 使用正则表达式解析行中 Affinity、RMSD Lower、RMSD Upper 的数值
+        # 使用正则表达式解析行中 Affinity、RMSD.txt Lower、RMSD.txt Upper 的数值
         pattern = r"Affinity\s*=\s*([-0-9\.]+).*Lower Bound\s*=\s*([-0-9\.]+).*Upper Bound\s*=\s*([-0-9\.]+)"
 
         # 解析 Quantum 的 20 组数据
@@ -78,19 +78,19 @@ if __name__ == '__main__':
         axs[0].set_ylabel("Affinity")
         axs[0].legend()
 
-        # 图 2：RMSD Lower Bound
+        # 图 2：RMSD.txt Lower Bound
         axs[1].plot(x, quantum_rmsd_lower, marker='o', label="Quantum")
         axs[1].plot(x, af3_rmsd_lower, marker='s', label="AF3")
-        axs[1].set_title("RMSD Lower Bound")
+        axs[1].set_title("RMSD.txt Lower Bound")
         axs[1].set_xlabel("Trial")
-        axs[1].set_ylabel("RMSD Lower")
+        axs[1].set_ylabel("RMSD.txt Lower")
 
-        # 图 3：RMSD Upper Bound
+        # 图 3：RMSD.txt Upper Bound
         axs[2].plot(x, quantum_rmsd_upper, marker='o', label="Quantum")
         axs[2].plot(x, af3_rmsd_upper, marker='s', label="AF3")
-        axs[2].set_title("RMSD Upper Bound")
+        axs[2].set_title("RMSD.txt Upper Bound")
         axs[2].set_xlabel("Trial")
-        axs[2].set_ylabel("RMSD Upper")
+        axs[2].set_ylabel("RMSD.txt Upper")
 
         # 设置总标题，表示是哪一个子文件夹
         # plt.suptitle(f"Results for {folder}")

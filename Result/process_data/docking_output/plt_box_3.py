@@ -84,7 +84,7 @@ if __name__ == '__main__':
         quantum_affinity_plot = [val for val in quantum_affinity_all if val <= 0]
         af3_affinity_plot = [val for val in af3_affinity_all if val <= 0]
 
-        quantum_rmsd_lower_plot = quantum_rmsd_lower_all[:]  # RMSD 不排除
+        quantum_rmsd_lower_plot = quantum_rmsd_lower_all[:]  # RMSD.txt 不排除
         af3_rmsd_lower_plot = af3_rmsd_lower_all[:]
 
         quantum_rmsd_upper_plot = quantum_rmsd_upper_all[:]
@@ -143,7 +143,7 @@ if __name__ == '__main__':
         for patch, color in zip(bp_lb['boxes'], ["tab:orange", "tab:blue"]):
             patch.set_facecolor(color)
             patch.set_alpha(0.7)
-        axs[1].set_ylabel("RMSD Lower Bound")
+        axs[1].set_ylabel("RMSD.txt Lower Bound")
 
         data_ub_plot = [quantum_rmsd_upper_plot, af3_rmsd_upper_plot]
         bp_ub = axs[2].boxplot(
@@ -160,7 +160,7 @@ if __name__ == '__main__':
         for patch, color in zip(bp_ub['boxes'], ["tab:orange", "tab:blue"]):
             patch.set_facecolor(color)
             patch.set_alpha(0.7)
-        axs[2].set_ylabel("RMSD Upper Bound")
+        axs[2].set_ylabel("RMSD.txt Upper Bound")
 
         plt.tight_layout()
 

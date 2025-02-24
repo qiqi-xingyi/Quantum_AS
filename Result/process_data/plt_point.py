@@ -133,12 +133,12 @@ if __name__ == '__main__':
         )
         plotted_methods[method] = scatter_obj  # store the handle
 
-    # 4.2 Subplot 2 for RMSD l.b. (skip mode=1)
+    # 4.2 Subplot 2 for RMSD.txt l.b. (skip mode=1)
     ax2 = fig.add_subplot(1, 3, 2, projection="3d")
-    # ax2.set_title("Docking RMSD Lower Bound")
+    # ax2.set_title("Docking RMSD.txt Lower Bound")
     ax2.set_xlabel("Trial",labelpad=26)
     ax2.set_ylabel("Mode",labelpad=24)
-    ax2.set_zlabel("RMSD Lower Bound",labelpad=17)
+    ax2.set_zlabel("RMSD.txt Lower Bound",labelpad=17)
     ax2.set_xticks(range(1, num_trials + 1))
     ax2.set_xticklabels([str(i) for i in range(1, num_trials + 1)], rotation=45)
 
@@ -167,12 +167,12 @@ if __name__ == '__main__':
             # we already got it from subplot 1
         )
 
-    # 4.3 Subplot 3 for RMSD u.b. (skip mode=1)
+    # 4.3 Subplot 3 for RMSD.txt u.b. (skip mode=1)
     ax3 = fig.add_subplot(1, 3, 3, projection="3d")
-    # ax3.set_title("Docking RMSD Upper Bound")
+    # ax3.set_title("Docking RMSD.txt Upper Bound")
     ax3.set_xlabel("Trial",labelpad=26)
     ax3.set_ylabel("Mode",labelpad=24)
-    ax3.set_zlabel("RMSD Upper Bound",labelpad=17)
+    ax3.set_zlabel("RMSD.txt Upper Bound",labelpad=17)
     ax3.set_xticks(range(1, num_trials + 1))
     ax3.set_xticklabels([str(i) for i in range(1, num_trials + 1)], rotation=45)
 

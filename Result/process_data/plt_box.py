@@ -20,10 +20,10 @@ def read_data_from_txt(file_path):
             elif line.strip().startswith("AF2 Results:"):
                 is_quantum = False
             elif "Affinity" in line:
-                # Extract Affinity, RMSD Lower Bound, RMSD Upper Bound
+                # Extract Affinity, RMSD.txt Lower Bound, RMSD.txt Upper Bound
                 affinity = float(line.split("Affinity =")[1].split(",")[0].strip())
-                rmsd_lower = float(line.split("RMSD Lower Bound =")[1].split(",")[0].strip())
-                rmsd_upper = float(line.split("RMSD Upper Bound =")[1].strip())
+                rmsd_lower = float(line.split("RMSD.txt Lower Bound =")[1].split(",")[0].strip())
+                rmsd_upper = float(line.split("RMSD.txt Upper Bound =")[1].strip())
 
                 if is_quantum:
                     quantum_data["affinity"].append(affinity)
@@ -56,7 +56,7 @@ if __name__ == '__main__':
 
     # Define each subplot's data type and title
     data_types = ["affinity", "rmsd_lower", "rmsd_upper"]
-    titles = ["Affinity Scores", "RMSD Lower Bound", "RMSD Upper Bound"]
+    titles = ["Affinity Scores", "RMSD.txt Lower Bound", "RMSD.txt Upper Bound"]
 
     # Create a single figure with 3 subplots horizontally
     fig, axes = plt.subplots(nrows=1, ncols=3, figsize=(18, 6))

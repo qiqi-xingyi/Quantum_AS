@@ -2,7 +2,7 @@
 # @Time : 2/21/25 4:04 PM
 # @Author : Yuqi Zhang
 # @Email : yzhan135@kent.edu
-# @File : RMSD.py
+# @File : RMSD.txt.py
 
 import os
 from Bio.PDB import PDBParser, MMCIFParser, Superimposer
@@ -42,7 +42,7 @@ def calculate_rmsd(
     selection            : 'CA' 或 'all'
                            - 'CA'  : 仅使用 Cα 原子
                            - 'all' : 使用对应残基的所有原子
-    return               : superimposer.rms (RMSD 值, Å)
+    return               : superimposer.rms (RMSD.txt 值, Å)
     """
     # 取第一个 model（大多数情况下 PDB/CIF 只有一个 model）
     full_model = full_structure[0]
@@ -126,7 +126,7 @@ frag_chain_id = "A"
 # 4) 比对策略：'CA' 或 'all'
 selection_mode = "CA"
 
-# 5) 输出 RMSD 的文本文件名
+# 5) 输出 RMSD.txt 的文本文件名
 output_file_name = "./3b26/rmsd_result_Q.txt"
 
 # =========== 主程序部分 ===========
@@ -136,7 +136,7 @@ if __name__ == "__main__":
     full_structure = get_structure(full_structure_file, "full_protein")
     frag_structure = get_structure(fragment_structure_file, "fragment")
 
-    # 计算 RMSD
+    # 计算 RMSD.txt
     rmsd_value = calculate_rmsd(
         full_structure,
         frag_structure,
@@ -152,14 +152,14 @@ if __name__ == "__main__":
            f"  完整蛋白: {os.path.basename(full_structure_file)} (链 {full_chain_id}, 残基 {start_resid}-{end_resid})\n"
            f"  片段: {os.path.basename(fragment_structure_file)} (链 {frag_chain_id})\n"
            f"比对策略: {selection_mode}\n"
-           f"RMSD: {rmsd_value:.3f} Å\n")
+           f"RMSD.txt: {rmsd_value:.3f} Å\n")
 
     print(msg)
 
     with open(output_file_name, "w", encoding="utf-8") as f:
         f.write(msg)
 
-    print(f"RMSD 已保存至文件: {output_file_name}")
+    print(f"RMSD.txt 已保存至文件: {output_file_name}")
 
     # 如果需要将对齐后的片段写出为 PDB 文件，取消以下注释：
     """
